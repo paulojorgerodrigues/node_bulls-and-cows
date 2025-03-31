@@ -26,7 +26,7 @@ function generateRandomNumber() {
       str += sn;
       i++;
     } else {
-      n = getRandomInt(9) + 1;
+      n = getRandomInt(9);
 
       const sn = `${n}`;
 
