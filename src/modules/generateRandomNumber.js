@@ -12,32 +12,25 @@ function getRandomInt(max) {
  */
 function generateRandomNumber() {
   /* Write your code here */
-  let str = '';
-  let i = 0;
+  const gen = new Set();
 
-  while (i < 4) {
-    let n;
-
-    if (i === 0) {
-      n = getRandomInt(8) + 1;
+  while (gen.size < 4) {
+    if (gen.size === 0) {
+      const n = getRandomInt(8) + 1;
 
       const sn = `${n}`;
 
-      str += sn;
-      i++;
+      gen.add(sn);
     } else {
-      n = getRandomInt(9);
+      const n = getRandomInt(9);
 
       const sn = `${n}`;
 
-      if (str.indexOf(sn) < 0) {
-        str += sn;
-        i++;
-      }
+      gen.add(sn);
     }
   }
 
-  return +str;
+  return +Array.from(gen).join('');
 }
 
 module.exports = {
